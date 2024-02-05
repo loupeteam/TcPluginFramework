@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="TaskBase" Id="{11e525e0-645b-4df4-b2fb-22f19d8aff29}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK ABSTRACT TaskBase EXTENDS ComponentBase IMPLEMENTS ITaskState
+VAR
+	i_taskBase : TaskBaseInternal;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Folder Name="API" Id="{fa7b63a7-59cf-4c12-b577-5e7473af5e23}" />
+    <Folder Name="ApplicationOverrides" Id="{38d144c6-40b6-4320-94ca-f6bb43b62195}" />
+    <Folder Name="Internal" Id="{0e960566-c110-4d07-93c2-d6c5d78d7f5f}" />
+    <Method Name="Inihibits" Id="{0087f8d2-5c7f-4a62-a915-5d55db385d44}" FolderPath="ApplicationOverrides\">
+      <Declaration><![CDATA[METHOD Inihibits : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//This method is meant to be overriden]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="newCommandState" Id="{f0e11aaa-474a-41da-a433-67233cb55afc}" FolderPath="API\">
+      <Declaration><![CDATA[METHOD newCommandState : BOOL
+VAR_INPUT
+	newTaskState : ENUM;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[i_taskBase._newCommand := TRUE;
+i_taskBase._state := newTaskState;]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="newTaskCommand" Id="{abd17dbf-36ab-4acf-9302-1631ffdd8ae9}">
+      <Declaration><![CDATA[{warning 'add property implementation'}
+PROPERTY newTaskCommand : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{25feb5aa-7b58-4fc7-a0d8-1a191cb27a01}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[//newTaskCommand := ]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="Running" Id="{fa085813-51d8-4282-8908-957f2a649b57}" FolderPath="Internal\">
+      <Declaration><![CDATA[METHOD Running : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[THIS^.Simulation();
+
+IF newTaskCommand THEN
+
+	IF taskReady THEN
+		
+		THIS^.Inihibits();
+	
+		THIS^.UpdateState();
+
+	ELSE
+
+		//REJECTED		
+
+	END_IF
+END_IF
+
+THIS^.StateMachine();
+
+THIS^.Cyclic();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="stateErrored" Id="{a29a6bdc-8961-4e72-b5c8-9986d26c7307}" FolderPath="API\">
+      <Declaration><![CDATA[METHOD stateErrored : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="stateFinished" Id="{0e01e0bf-0d2f-48cf-a4a8-cac681f65a10}" FolderPath="API\">
+      <Declaration><![CDATA[METHOD stateFinished : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[i_taskBase._state := 0;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="StateMachine" Id="{8d58f681-a9ce-4bce-b521-193c540b10fe}" FolderPath="ApplicationOverrides\">
+      <Declaration><![CDATA[METHOD StateMachine : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+    <Property Name="taskReady" Id="{700b7e26-f967-4e8d-8499-104188e09687}" FolderPath="API\">
+      <Declaration><![CDATA[//Ready indicates that the task is ready to accept commands
+{attribute 'monitoring' := 'call'}
+PROPERTY taskReady : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{57e63903-3b80-4b15-831d-4bc339d57d54}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[taskReady := i_ComponentBase._ready;]]></ST>
+        </Implementation>
+      </Get>
+      <Set Name="Set" Id="{b8cc81d5-fe59-44cc-bded-263742f9c532}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[i_ComponentBase._ready := taskReady;]]></ST>
+        </Implementation>
+      </Set>
+    </Property>
+    <Property Name="taskState" Id="{0037edbd-1327-4bd8-a4eb-83b875b0c5a7}" FolderPath="API\">
+      <Declaration><![CDATA[//Gets the current state of the system
+{attribute 'monitoring' := 'call'}
+PROPERTY taskState : ENUM
+]]></Declaration>
+      <Get Name="Get" Id="{f23eefa5-93ff-4b9e-be63-112cd0e9b4fa}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+        <Implementation>
+          <ST><![CDATA[
+taskState :=i_taskBase._state;]]></ST>
+        </Implementation>
+      </Get>
+    </Property>
+    <Method Name="UpdateState" Id="{c750a4c5-92f0-4732-b52c-5a879b7774b7}" FolderPath="ApplicationOverrides\">
+      <Declaration><![CDATA[METHOD UpdateState : BOOL
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>
