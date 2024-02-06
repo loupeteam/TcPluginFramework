@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="ITaskState" Id="{c414fd66-a244-4c63-a9ca-a3748ab93237}">
+    <Declaration><![CDATA[INTERFACE ITaskState
+]]></Declaration>
+    <Method Name="Cyclic" Id="{df7848e1-6796-42e6-952c-938fef13bd38}">
+      <Declaration><![CDATA[METHOD Cyclic
+]]></Declaration>
+    </Method>
+    <Method Name="Inihibits" Id="{e83ce640-e6f2-45e5-949b-c526c3174821}">
+      <Declaration><![CDATA[METHOD Inihibits : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="newCommandState" Id="{8fecb899-e712-4c2b-84b8-942531440e9a}">
+      <Declaration><![CDATA[METHOD newCommandState : BOOL
+VAR_INPUT
+	newTaskState : ENUM;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="newTaskCommand" Id="{6790c3f8-5fb9-444d-9490-9a806808eff2}">
+      <Declaration><![CDATA[PROPERTY newTaskCommand : BOOL]]></Declaration>
+      <Get Name="Get" Id="{4a221e21-683f-4623-87f8-f23f402dd6ee}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="stateErrored" Id="{1a290f15-f898-411f-a486-cdd0d8c7bba2}">
+      <Declaration><![CDATA[METHOD stateErrored : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="stateFinished" Id="{cd0661c2-8f19-4da1-9ffb-aae73db39d56}">
+      <Declaration><![CDATA[METHOD stateFinished : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="StateMachine" Id="{8686b074-f9b6-4442-b1e6-0de110cfebc5}">
+      <Declaration><![CDATA[METHOD StateMachine : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="taskReady" Id="{bd8a546f-5904-4116-aebd-80d37e3d8855}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY taskReady : Bool]]></Declaration>
+      <Get Name="Get" Id="{ee69b286-51fd-41c8-ba24-ab7d84cccfed}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{ec0be226-c73b-41e3-8440-7511474e4879}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="taskState" Id="{17386119-9411-446c-9999-0b14544f8dcf}">
+      <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
+PROPERTY taskState : ENUM]]></Declaration>
+      <Get Name="Get" Id="{965a4deb-c78d-498e-bc57-5a24822c86ee}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="UpdateState" Id="{bae77c85-768e-452a-8e93-0534a052dc9c}">
+      <Declaration><![CDATA[METHOD UpdateState : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

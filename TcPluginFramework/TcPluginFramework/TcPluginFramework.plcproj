@@ -19,38 +19,41 @@
     <Company>Loupe</Company>
     <Released>false</Released>
     <Title>TcPluginFramework</Title>
-    <ProjectVersion>0.0.1</ProjectVersion>
+    <ProjectVersion>0.0.2</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="AppFrameWork" />
+    <Folder Include="TcPluginFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppFrameWork\ComponentBase.TcPOU">
+    <Compile Include="TcPluginFramework\ComponentBase.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppFrameWork\ComponentBaseInternal.TcDUT">
+    <Compile Include="TcPluginFramework\ComponentBaseInternal.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppFrameWork\GVLPluginFramework.TcGVL">
+    <Compile Include="TcPluginFramework\GVLPluginFramework.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="AppFrameWork\IPlugin.TcIO">
+    <Compile Include="TcPluginFramework\IPlugin.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppFrameWork\IPluginRunner.TcIO">
+    <Compile Include="TcPluginFramework\IPluginRunner.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppFrameWork\LogMessage.TcPOU">
+    <Compile Include="TcPluginFramework\ITaskState.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppFrameWork\PluginRunner.TcPOU">
+    <Compile Include="TcPluginFramework\LogMessage.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppFrameWork\TaskBase.TcPOU">
+    <Compile Include="TcPluginFramework\PluginRunner.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AppFrameWork\TaskBaseInternal.TcDUT">
+    <Compile Include="TcPluginFramework\TaskBase.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TcPluginFramework\TaskBaseInternal.TcDUT">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -58,6 +61,16 @@
     <None Include="TcPluginFramework.tmc">
       <SubType>Content</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="TcCommando">
+      <DefaultResolution>TcCommando, * (Loupe)</DefaultResolution>
+      <Namespace>TcCommando</Namespace>
+    </PlaceholderReference>
   </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
