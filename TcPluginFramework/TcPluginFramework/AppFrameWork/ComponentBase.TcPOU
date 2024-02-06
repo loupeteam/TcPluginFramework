@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="ComponentBase" Id="{fd84c14d-786e-4719-a893-d07044f55331}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK ABSTRACT ComponentBase IMPLEMENTS IPluginRunner, IPlugin
+VAR
+	i_ComponentBase : ComponentBaseInternal;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[Run();]]></ST>
+    </Implementation>
+    <Folder Name="API" Id="{c262686b-39a8-47b3-a436-2f37f829fd3b}" />
+    <Folder Name="ApplicationOverrides" Id="{f2009942-3f7f-4941-bfa7-741ffc14e21c}" />
+    <Folder Name="Internal" Id="{e1a9125c-f3ee-490f-ba83-a56d67f46885}" />
+    <Method Name="Cyclic" Id="{f52824b0-33e3-4c0b-be35-3a5b4aa4be2f}" FolderPath="ApplicationOverrides\">
+      <Declaration><![CDATA[METHOD Cyclic
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//This method is meant to be overridden to contain any cyclic function block calls]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Init" Id="{e101f04f-5e1f-4e3c-b777-2115fc0732ac}" FolderPath="ApplicationOverrides\">
+      <Declaration><![CDATA[METHOD Init : BOOL
+VAR_INPUT
+END_VAR
+VAR
+	nData : UDINT;
+	pData : PVOID;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[InitComplete();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="InitComplete" Id="{87aa42d7-dc57-4645-9c0e-f16722b7922f}" FolderPath="API\">
+      <Declaration><![CDATA[METHOD InitComplete
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[i_ComponentBase._initDone := TRUE;
+LogMessage( 0, 'Init Complete');]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="RegisterPlugin" Id="{571843c1-23e2-4fb3-8310-25661dcfe26f}" FolderPath="Internal\">
+      <Declaration><![CDATA[METHOD RegisterPlugin
+VAR_INPUT
+	plugin : IPlugin;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[i_ComponentBase._plugins.RegisterPlugin(plugin);
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Run" Id="{261da83f-aad6-40a0-bf8a-54e818a518b0}" FolderPath="API\">
+      <Declaration><![CDATA[METHOD Run : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//If we aren't initialized, call init
+IF NOT i_ComponentBase._initDone THEN
+	
+	//Init any derived classes
+	THIS^.Init();
+	
+END_IF
+
+runPlugins();
+
+//Init() was successful, call cyclic
+IF i_ComponentBase._initDone THEN
+	
+	THIS^.Running();
+
+END_IF]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Running" Id="{2a550c20-dd34-4807-bd60-3c34c3be85bf}" FolderPath="Internal\">
+      <Declaration><![CDATA[METHOD Running : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[//Run the main code
+THIS^.Simulation();
+
+THIS^.Cyclic();]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="runPlugins" Id="{98b78174-293e-4815-ac54-043bcc5693a6}" FolderPath="Internal\">
+      <Declaration><![CDATA[METHOD PRIVATE runPlugins
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[i_ComponentBase._plugins.runPlugins();
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Simulation" Id="{86233419-db64-4072-8f39-139f044b5b04}" FolderPath="ApplicationOverrides\">
+      <Declaration><![CDATA[METHOD Simulation : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="ComponentBaseInternal" Id="{90bf22e9-860b-49ac-b368-6db1f3d33fde}">
+    <Declaration><![CDATA[TYPE ComponentBaseInternal :
+STRUCT
+	_initDone : BOOL;
+	_ready : BOOL;	
+	_plugins : PluginRunner; 
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

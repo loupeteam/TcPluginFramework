@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="TaskBaseInternal" Id="{c731ea55-51d4-436c-b5c4-ed556ae77e87}">
+    <Declaration><![CDATA[TYPE TaskBaseInternal :
+STRUCT
+	_state : UDINT;
+	_newCommand : BOOL;
+	_activeCommand : IPLCOpenCommand;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
