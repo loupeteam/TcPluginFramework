@@ -129,7 +129,7 @@ END_VAR
 ]]></Declaration>
         <Implementation>
           <ST><![CDATA[
-taskState :=i_taskBase._state;]]></ST>
+taskState := i_taskBase._state;]]></ST>
         </Implementation>
       </Get>
     </Property>

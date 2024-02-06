@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <TcSmItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.53" ClassName="CNestedPlcProjDef">
 	<Project GUID="{94F208A0-A5C3-4D26-B7DE-05DB87A56936}" Name="TcPluginFramework" PrjFilePath="..\..\TcPluginFramework\TcPluginFramework.plcproj" TmcFilePath="..\..\TcPluginFramework\TcPluginFramework.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TcPluginFramework\TcPluginFramework.tmc" TmcHash="{5A08E144-5363-17BF-3FFD-96FD2F08AE27}">
+		<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TcPluginFramework\TcPluginFramework.tmc" TmcHash="{45C57FFE-FE15-492B-23DA-123E3B9CFE50}">
 			<Name>TcPluginFramework Instance</Name>
 			<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 			<Contexts>
