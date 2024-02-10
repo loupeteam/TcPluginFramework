@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1">
   <Itf Name="IPluginRunner" Id="{81c261ba-8c6e-4e80-a41e-8f5e19ff3c9a}">
     <Declaration><![CDATA[INTERFACE IPluginRunner EXTENDS __System.IQueryInterface
 ]]></Declaration>
