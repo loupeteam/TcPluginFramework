@@ -6,7 +6,7 @@
     <ProjectGuid>{94f208a0-a5c3-4d26-b7de-05db87a56936}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
-    <WriteProductVersion>false</WriteProductVersion>
+    <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>TcPluginFramework</Name>
     <ProgramVersion>3.1.4024.0</ProgramVersion>
@@ -21,6 +21,16 @@
     <Title>TcPluginFramework</Title>
     <ProjectVersion>0.0.2</ProjectVersion>
     <CombineIds>true</CombineIds>
+    <LibraryCategories>
+      <LibraryCategory xmlns="">
+        <Id>{09904977-c10b-4290-b9fa-0485eee86e1c}</Id>
+        <Version>1.0.0.0</Version>
+        <DefaultName>Loupe</DefaultName>
+      </LibraryCategory>
+    </LibraryCategories>
+    <SelectedLibraryCategories>
+      <Id xmlns="">{09904977-c10b-4290-b9fa-0485eee86e1c}</Id>
+    </SelectedLibraryCategories>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="TcPluginFramework" />
