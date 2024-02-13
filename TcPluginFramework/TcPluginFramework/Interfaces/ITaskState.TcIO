@@ -18,7 +18,7 @@ END_VAR
     <Method Name="newCommandState" Id="{8fecb899-e712-4c2b-84b8-942531440e9a}">
       <Declaration><![CDATA[METHOD newCommandState : BOOL
 VAR_INPUT
-	newTaskState : ENUM;
+    newTaskState : ENUM;
 END_VAR
 ]]></Declaration>
     </Method>

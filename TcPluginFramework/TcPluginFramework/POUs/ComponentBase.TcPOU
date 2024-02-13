@@ -3,7 +3,7 @@
   <POU Name="ComponentBase" Id="{fd84c14d-786e-4719-a893-d07044f55331}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK ABSTRACT ComponentBase IMPLEMENTS IPluginRunner, IPlugin
 VAR
-	i_ComponentBase : ComponentBaseInternal;
+    i_ComponentBase : ComponentBaseInternal;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -28,8 +28,8 @@ Run();]]></ST>
 VAR_INPUT
 END_VAR
 VAR
-	nData : UDINT;
-	pData : PVOID;
+    nData : UDINT;
+    pData : PVOID;
 END_VAR
 ]]></Declaration>
       <Implementation>
@@ -53,7 +53,7 @@ LogMessage( 0, 'Init Complete');]]></ST>
     <Method Name="RegisterPlugin" Id="{571843c1-23e2-4fb3-8310-25661dcfe26f}" FolderPath="Internal\">
       <Declaration><![CDATA[METHOD RegisterPlugin
 VAR_INPUT
-	plugin : IPlugin;
+    plugin : IPlugin;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
@@ -72,18 +72,18 @@ END_VAR
 
 //If we aren't initialized, call init
 IF NOT i_ComponentBase._initDone THEN
-	
-	//Init any derived classes
-	THIS^.Init();
-	
+
+    //Init any derived classes
+    THIS^.Init();
+
 END_IF
 
 runPlugins();
 
 //Init() was successful, call cyclic
 IF i_ComponentBase._initDone THEN
-	
-	THIS^.Running();
+
+    THIS^.Running();
 
 END_IF]]></ST>
       </Implementation>

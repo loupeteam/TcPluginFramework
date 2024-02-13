@@ -3,8 +3,8 @@
   <POU Name="LogMessage" Id="{b932cb36-bcc3-4770-a9fa-39a390541f57}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION LogMessage
 VAR_INPUT
-	Level : INT;
-	Message : STRING;
+    Level : INT;
+    Message : STRING;
 END_VAR
 ]]></Declaration>
     <Implementation>

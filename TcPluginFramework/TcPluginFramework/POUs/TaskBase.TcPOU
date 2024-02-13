@@ -3,7 +3,7 @@
   <POU Name="TaskBase" Id="{11e525e0-645b-4df4-b2fb-22f19d8aff29}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK ABSTRACT TaskBase EXTENDS ComponentBase IMPLEMENTS ITaskState
 VAR
-	i_taskBase : TaskBaseInternal;
+    i_taskBase : TaskBaseInternal;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -26,7 +26,7 @@ END_VAR
     <Method Name="newCommandState" Id="{f0e11aaa-474a-41da-a433-67233cb55afc}" FolderPath="API\">
       <Declaration><![CDATA[METHOD newCommandState : BOOL
 VAR_INPUT
-	newTaskState : ENUM;
+    newTaskState : ENUM;
 END_VAR
 ]]></Declaration>
       <Implementation>
@@ -64,17 +64,17 @@ THIS^.Simulation();
 
 IF newTaskCommand THEN
 
-	IF taskReady THEN
-		
-		THIS^.Inihibits();
-	
-		THIS^.UpdateState();
+    IF taskReady THEN
 
-	ELSE
+        THIS^.Inihibits();
 
-		//REJECTED		
+        THIS^.UpdateState();
 
-	END_IF
+    ELSE
+
+        //REJECTED		
+
+    END_IF
 END_IF
 
 THIS^.StateMachine();

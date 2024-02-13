@@ -8,7 +8,7 @@ INTERFACE IPluginRunner EXTENDS __System.IQueryInterface
     <Method Name="RegisterPlugin" Id="{b3d01674-ef9b-472d-9fde-029420df9f2f}">
       <Declaration><![CDATA[METHOD RegisterPlugin
 VAR_INPUT
-	plugin : IPlugin;
+    plugin : IPlugin;
 END_VAR
 ]]></Declaration>
     </Method>
