@@ -47,6 +47,7 @@ END_VAR
         <Implementation>
           <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
+// TODO implement
 //newTaskCommand := ]]></ST>
         </Implementation>
       </Get>
