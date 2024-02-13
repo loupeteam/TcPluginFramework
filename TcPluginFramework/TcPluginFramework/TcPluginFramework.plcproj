@@ -33,38 +33,42 @@
     </SelectedLibraryCategories>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="Interfaces" />
+    <Folder Include="DUTs" />
+    <Folder Include="GVLs" />
+    <Folder Include="POUs" />
     <Folder Include="TcPluginFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TcPluginFramework\ComponentBase.TcPOU">
+    <Compile Include="DUTs\ComponentBaseInternal.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TcPluginFramework\ComponentBaseInternal.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="TcPluginFramework\GVLPluginFramework.TcGVL">
+    <Compile Include="GVLs\GVLPluginFramework.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="TcPluginFramework\IPlugin.TcIO">
+    <Compile Include="Interfaces\IPlugin.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TcPluginFramework\IPluginRunner.TcIO">
+    <Compile Include="Interfaces\IPluginRunner.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TcPluginFramework\ITaskState.TcIO">
+    <Compile Include="Interfaces\ITaskState.TcIO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TcPluginFramework\LogMessage.TcPOU">
+    <Compile Include="POUs\ComponentBase.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TcPluginFramework\PluginRunner.TcPOU">
+    <Compile Include="POUs\LogMessage.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TcPluginFramework\TaskBase.TcPOU">
+    <Compile Include="POUs\PluginRunner.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TcPluginFramework\TaskBaseInternal.TcDUT">
+    <Compile Include="POUs\TaskBase.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\TaskBaseInternal.TcDUT">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
