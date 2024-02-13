@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1">
   <Itf Name="IPlugin" Id="{a90139af-c645-4465-a767-35d4a3a446d8}">
-    <Declaration><![CDATA[INTERFACE IPlugin
+    <Declaration><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+INTERFACE IPlugin
 ]]></Declaration>
     <Method Name="Run" Id="{b378704d-347d-4262-8430-0027cb10569d}">
       <Declaration><![CDATA[METHOD Run : BOOL

@@ -7,7 +7,9 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Run();]]></ST>
+      <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+Run();]]></ST>
     </Implementation>
     <Folder Name="API" Id="{c262686b-39a8-47b3-a436-2f37f829fd3b}" />
     <Folder Name="ApplicationOverrides" Id="{f2009942-3f7f-4941-bfa7-741ffc14e21c}" />
@@ -16,7 +18,9 @@ END_VAR
       <Declaration><![CDATA[METHOD Cyclic
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[//This method is meant to be overridden to contain any cyclic function block calls]]></ST>
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+//This method is meant to be overridden to contain any cyclic function block calls]]></ST>
       </Implementation>
     </Method>
     <Method Name="Init" Id="{e101f04f-5e1f-4e3c-b777-2115fc0732ac}" FolderPath="ApplicationOverrides\">
@@ -29,7 +33,9 @@ VAR
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[InitComplete();]]></ST>
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+InitComplete();]]></ST>
       </Implementation>
     </Method>
     <Method Name="InitComplete" Id="{87aa42d7-dc57-4645-9c0e-f16722b7922f}" FolderPath="API\">
@@ -38,7 +44,9 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[i_ComponentBase._initDone := TRUE;
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+i_ComponentBase._initDone := TRUE;
 LogMessage( 0, 'Init Complete');]]></ST>
       </Implementation>
     </Method>
@@ -48,7 +56,9 @@ VAR_INPUT
 	plugin : IPlugin;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[i_ComponentBase._plugins.RegisterPlugin(plugin);
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+i_ComponentBase._plugins.RegisterPlugin(plugin);
 ]]></ST>
       </Implementation>
     </Method>
@@ -58,7 +68,9 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[//If we aren't initialized, call init
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+//If we aren't initialized, call init
 IF NOT i_ComponentBase._initDone THEN
 	
 	//Init any derived classes
@@ -82,7 +94,9 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[//Run the main code
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+// Run the main code
 THIS^.Simulation();
 
 THIS^.Cyclic();]]></ST>
@@ -92,7 +106,9 @@ THIS^.Cyclic();]]></ST>
       <Declaration><![CDATA[METHOD PRIVATE runPlugins
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[i_ComponentBase._plugins.runPlugins();
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+i_ComponentBase._plugins.runPlugins();
 ]]></ST>
       </Implementation>
     </Method>
@@ -102,7 +118,9 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+]]></ST>
       </Implementation>
     </Method>
   </POU>

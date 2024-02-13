@@ -6,7 +6,9 @@ VAR
 	_plugins : ARRAY[0..9] OF IPlugin; 
 END_VAR]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+]]></ST>
     </Implementation>
     <Method Name="RegisterPlugin" Id="{f7189c99-833c-4a6d-967c-5f0e1d5baf2c}">
       <Declaration><![CDATA[METHOD RegisterPlugin
@@ -17,7 +19,9 @@ VAR
 	i : INT;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[FOR i:=0 TO (SIZEOF(_plugins)/SIZEOF(_plugins[0]))-1 DO
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+FOR i:=0 TO (SIZEOF(_plugins)/SIZEOF(_plugins[0]))-1 DO
 	//We have a new slot
 	IF _plugins[i] = 0 THEN
 		_plugins[i] := plugin;
@@ -35,7 +39,9 @@ VAR
 	i : INT;
 END_VAR]]></Declaration>
       <Implementation>
-        <ST><![CDATA[FOR i:=0 TO (SIZEOF(_plugins)/SIZEOF(_plugins[0]))-1 DO
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+FOR i:=0 TO (SIZEOF(_plugins)/SIZEOF(_plugins[0]))-1 DO
 	IF _plugins[i] <> 0 THEN
 		_plugins[i].Run(  );
 	ELSE

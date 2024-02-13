@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1">
   <Itf Name="IPluginRunner" Id="{81c261ba-8c6e-4e80-a41e-8f5e19ff3c9a}">
-    <Declaration><![CDATA[INTERFACE IPluginRunner EXTENDS __System.IQueryInterface
+    <Declaration><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+INTERFACE IPluginRunner EXTENDS __System.IQueryInterface
 ]]></Declaration>
     <Method Name="RegisterPlugin" Id="{b3d01674-ef9b-472d-9fde-029420df9f2f}">
       <Declaration><![CDATA[METHOD RegisterPlugin

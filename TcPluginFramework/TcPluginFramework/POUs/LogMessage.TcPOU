@@ -8,7 +8,9 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF Level >= GVLPluginFramework.LogLevel THEN
+      <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+IF Level >= GVLPluginFramework.LogLevel THEN
 	ADSLOGSTR(	msgCtrlMask := ADSLOG_MSGTYPE_LOG, 
 				msgFmtStr   := Message, 
 				strArg      := '');
