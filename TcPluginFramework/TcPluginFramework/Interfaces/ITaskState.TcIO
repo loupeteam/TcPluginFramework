@@ -15,27 +15,27 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Method Name="newCommandState" Id="{8fecb899-e712-4c2b-84b8-942531440e9a}">
-      <Declaration><![CDATA[METHOD newCommandState : BOOL
+    <Method Name="NewCommandState" Id="{8fecb899-e712-4c2b-84b8-942531440e9a}">
+      <Declaration><![CDATA[METHOD NewCommandState : BOOL
 VAR_INPUT
     newTaskState : ENUM;
 END_VAR
 ]]></Declaration>
     </Method>
-    <Property Name="newTaskCommand" Id="{6790c3f8-5fb9-444d-9490-9a806808eff2}">
-      <Declaration><![CDATA[PROPERTY newTaskCommand : BOOL]]></Declaration>
+    <Property Name="NewTaskCommand" Id="{6790c3f8-5fb9-444d-9490-9a806808eff2}">
+      <Declaration><![CDATA[PROPERTY NewTaskCommand : BOOL]]></Declaration>
       <Get Name="Get" Id="{4a221e21-683f-4623-87f8-f23f402dd6ee}">
         <Declaration><![CDATA[]]></Declaration>
       </Get>
     </Property>
-    <Method Name="stateErrored" Id="{1a290f15-f898-411f-a486-cdd0d8c7bba2}">
-      <Declaration><![CDATA[METHOD stateErrored : BOOL
+    <Method Name="StateErrored" Id="{1a290f15-f898-411f-a486-cdd0d8c7bba2}">
+      <Declaration><![CDATA[METHOD StateErrored : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Method Name="stateFinished" Id="{cd0661c2-8f19-4da1-9ffb-aae73db39d56}">
-      <Declaration><![CDATA[METHOD stateFinished : BOOL
+    <Method Name="StateFinished" Id="{cd0661c2-8f19-4da1-9ffb-aae73db39d56}">
+      <Declaration><![CDATA[METHOD StateFinished : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
@@ -46,9 +46,9 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
     </Method>
-    <Property Name="taskReady" Id="{bd8a546f-5904-4116-aebd-80d37e3d8855}">
+    <Property Name="TaskReady" Id="{bd8a546f-5904-4116-aebd-80d37e3d8855}">
       <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
-PROPERTY taskReady : Bool]]></Declaration>
+PROPERTY TaskReady : Bool]]></Declaration>
       <Get Name="Get" Id="{ee69b286-51fd-41c8-ba24-ab7d84cccfed}">
         <Declaration><![CDATA[]]></Declaration>
       </Get>
@@ -56,9 +56,9 @@ PROPERTY taskReady : Bool]]></Declaration>
         <Declaration><![CDATA[]]></Declaration>
       </Set>
     </Property>
-    <Property Name="taskState" Id="{17386119-9411-446c-9999-0b14544f8dcf}">
+    <Property Name="TaskState" Id="{17386119-9411-446c-9999-0b14544f8dcf}">
       <Declaration><![CDATA[{attribute 'monitoring' := 'call'}
-PROPERTY taskState : ENUM]]></Declaration>
+PROPERTY TaskState : ENUM]]></Declaration>
       <Get Name="Get" Id="{965a4deb-c78d-498e-bc57-5a24822c86ee}">
         <Declaration><![CDATA[]]></Declaration>
       </Get>
