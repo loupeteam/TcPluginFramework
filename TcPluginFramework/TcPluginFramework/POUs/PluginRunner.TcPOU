@@ -3,7 +3,7 @@
   <POU Name="PluginRunner" Id="{c027d292-b228-4269-9c8f-f866c2dbfbd5}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK PluginRunner IMPLEMENTS IPluginRunner
 VAR
-	_plugins : ARRAY[0..9] OF IPlugin; 
+    _plugins : ARRAY[0..9] OF IPlugin;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
@@ -13,10 +13,10 @@ END_VAR]]></Declaration>
     <Method Name="RegisterPlugin" Id="{f7189c99-833c-4a6d-967c-5f0e1d5baf2c}">
       <Declaration><![CDATA[METHOD RegisterPlugin
 VAR_INPUT
-	plugin	: IPlugin;
+    plugin : IPlugin;
 END_VAR
 VAR
-	i : INT;
+    i : INT;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
@@ -36,17 +36,17 @@ END_FOR]]></ST>
     <Method Name="runPlugins" Id="{7ef6acbb-107b-480b-9c1a-6a32c0880262}">
       <Declaration><![CDATA[METHOD runPlugins
 VAR
-	i : INT;
+    i : INT;
 END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-FOR i:=0 TO (SIZEOF(_plugins)/SIZEOF(_plugins[0]))-1 DO
-	IF _plugins[i] <> 0 THEN
-		_plugins[i].Run(  );
-	ELSE
-		EXIT;
-	END_IF
+FOR i := 0 TO (SIZEOF(_plugins) / SIZEOF(_plugins[0])) - 1 DO
+    IF _plugins[i] <> 0 THEN
+        _plugins[i].Run();
+    ELSE
+        EXIT;
+    END_IF
 END_FOR
 ]]></ST>
       </Implementation>
