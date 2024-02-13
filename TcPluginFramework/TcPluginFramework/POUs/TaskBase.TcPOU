@@ -3,11 +3,13 @@
   <POU Name="TaskBase" Id="{11e525e0-645b-4df4-b2fb-22f19d8aff29}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK ABSTRACT TaskBase EXTENDS ComponentBase IMPLEMENTS ITaskState
 VAR
-	i_taskBase : TaskBaseInternal;
+    i_taskBase : TaskBaseInternal;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+]]></ST>
     </Implementation>
     <Folder Name="API" Id="{fa7b63a7-59cf-4c12-b577-5e7473af5e23}" />
     <Folder Name="ApplicationOverrides" Id="{38d144c6-40b6-4320-94ca-f6bb43b62195}" />
@@ -16,17 +18,21 @@ END_VAR
       <Declaration><![CDATA[METHOD Inihibits : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[//This method is meant to be overriden]]></ST>
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+//This method is meant to be overriden]]></ST>
       </Implementation>
     </Method>
     <Method Name="newCommandState" Id="{f0e11aaa-474a-41da-a433-67233cb55afc}" FolderPath="API\">
       <Declaration><![CDATA[METHOD newCommandState : BOOL
 VAR_INPUT
-	newTaskState : ENUM;
+    newTaskState : ENUM;
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[i_taskBase._newCommand := TRUE;
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+i_taskBase._newCommand := TRUE;
 i_taskBase._state := newTaskState;]]></ST>
       </Implementation>
     </Method>
@@ -39,7 +45,10 @@ PROPERTY newTaskCommand : BOOL
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[//newTaskCommand := ]]></ST>
+          <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+// TODO implement
+//newTaskCommand := ]]></ST>
         </Implementation>
       </Get>
     </Property>
@@ -49,21 +58,23 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[THIS^.Simulation();
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+THIS^.Simulation();
 
 IF newTaskCommand THEN
 
-	IF taskReady THEN
-		
-		THIS^.Inihibits();
-	
-		THIS^.UpdateState();
+    IF taskReady THEN
 
-	ELSE
+        THIS^.Inihibits();
 
-		//REJECTED		
+        THIS^.UpdateState();
 
-	END_IF
+    ELSE
+
+        //REJECTED		
+
+    END_IF
 END_IF
 
 THIS^.StateMachine();
@@ -77,7 +88,9 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+]]></ST>
       </Implementation>
     </Method>
     <Method Name="stateFinished" Id="{0e01e0bf-0d2f-48cf-a4a8-cac681f65a10}" FolderPath="API\">
@@ -86,14 +99,18 @@ VAR_INPUT
 END_VAR
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[i_taskBase._state := 0;]]></ST>
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+i_taskBase._state := 0;]]></ST>
       </Implementation>
     </Method>
     <Method Name="StateMachine" Id="{8d58f681-a9ce-4bce-b521-193c540b10fe}" FolderPath="ApplicationOverrides\">
       <Declaration><![CDATA[METHOD StateMachine : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+]]></ST>
       </Implementation>
     </Method>
     <Property Name="taskReady" Id="{700b7e26-f967-4e8d-8499-104188e09687}" FolderPath="API\">
@@ -106,7 +123,9 @@ PROPERTY taskReady : BOOL
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[taskReady := i_ComponentBase._ready;]]></ST>
+          <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+taskReady := i_ComponentBase._ready;]]></ST>
         </Implementation>
       </Get>
       <Set Name="Set" Id="{b8cc81d5-fe59-44cc-bded-263742f9c532}">
@@ -114,7 +133,9 @@ END_VAR
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[i_ComponentBase._ready := taskReady;]]></ST>
+          <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+i_ComponentBase._ready := taskReady;]]></ST>
         </Implementation>
       </Set>
     </Property>
@@ -128,7 +149,8 @@ PROPERTY taskState : ENUM
 END_VAR
 ]]></Declaration>
         <Implementation>
-          <ST><![CDATA[
+          <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
 taskState := i_taskBase._state;]]></ST>
         </Implementation>
       </Get>
@@ -137,7 +159,9 @@ taskState := i_taskBase._state;]]></ST>
       <Declaration><![CDATA[METHOD UpdateState : BOOL
 ]]></Declaration>
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+]]></ST>
       </Implementation>
     </Method>
   </POU>

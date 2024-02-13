@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1">
   <Itf Name="ITaskState" Id="{c414fd66-a244-4c63-a9ca-a3748ab93237}">
-    <Declaration><![CDATA[INTERFACE ITaskState
+    <Declaration><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+INTERFACE ITaskState
 ]]></Declaration>
     <Method Name="Cyclic" Id="{df7848e1-6796-42e6-952c-938fef13bd38}">
       <Declaration><![CDATA[METHOD Cyclic
@@ -16,7 +18,7 @@ END_VAR
     <Method Name="newCommandState" Id="{8fecb899-e712-4c2b-84b8-942531440e9a}">
       <Declaration><![CDATA[METHOD newCommandState : BOOL
 VAR_INPUT
-	newTaskState : ENUM;
+    newTaskState : ENUM;
 END_VAR
 ]]></Declaration>
     </Method>

@@ -3,7 +3,7 @@
   <GVL Name="GVLPluginFramework" Id="{1ad4663d-aae7-4491-bdf9-d7f4b936fa2d}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	LogLevel : INT;
+    LogLevel : INT;
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

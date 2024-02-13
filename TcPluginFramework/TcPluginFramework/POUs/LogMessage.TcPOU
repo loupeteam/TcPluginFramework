@@ -3,12 +3,14 @@
   <POU Name="LogMessage" Id="{b932cb36-bcc3-4770-a9fa-39a390541f57}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION LogMessage
 VAR_INPUT
-	Level : INT;
-	Message : STRING;
+    Level : INT;
+    Message : STRING;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF Level >= GVLPluginFramework.LogLevel THEN
+      <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
+
+IF Level >= GVLPluginFramework.LogLevel THEN
 	ADSLOGSTR(	msgCtrlMask := ADSLOG_MSGTYPE_LOG, 
 				msgFmtStr   := Message, 
 				strArg      := '');
