@@ -23,8 +23,8 @@ END_VAR
 //This method is meant to be overriden]]></ST>
       </Implementation>
     </Method>
-    <Method Name="newCommandState" Id="{f0e11aaa-474a-41da-a433-67233cb55afc}" FolderPath="API\">
-      <Declaration><![CDATA[METHOD newCommandState : BOOL
+    <Method Name="NewCommandState" Id="{f0e11aaa-474a-41da-a433-67233cb55afc}" FolderPath="API\">
+      <Declaration><![CDATA[METHOD NewCommandState : BOOL
 VAR_INPUT
     newTaskState : ENUM;
 END_VAR
@@ -36,9 +36,9 @@ i_taskBase._newCommand := TRUE;
 i_taskBase._state := newTaskState;]]></ST>
       </Implementation>
     </Method>
-    <Property Name="newTaskCommand" Id="{abd17dbf-36ab-4acf-9302-1631ffdd8ae9}">
+    <Property Name="NewTaskCommand" Id="{abd17dbf-36ab-4acf-9302-1631ffdd8ae9}">
       <Declaration><![CDATA[{warning 'add property implementation'}
-PROPERTY newTaskCommand : BOOL
+PROPERTY NewTaskCommand : BOOL
 ]]></Declaration>
       <Get Name="Get" Id="{25feb5aa-7b58-4fc7-a0d8-1a191cb27a01}">
         <Declaration><![CDATA[VAR
@@ -82,8 +82,8 @@ THIS^.StateMachine();
 THIS^.Cyclic();]]></ST>
       </Implementation>
     </Method>
-    <Method Name="stateErrored" Id="{a29a6bdc-8961-4e72-b5c8-9986d26c7307}" FolderPath="API\">
-      <Declaration><![CDATA[METHOD stateErrored : BOOL
+    <Method Name="StateErrored" Id="{a29a6bdc-8961-4e72-b5c8-9986d26c7307}" FolderPath="API\">
+      <Declaration><![CDATA[METHOD StateErrored : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
@@ -93,8 +93,8 @@ END_VAR
 ]]></ST>
       </Implementation>
     </Method>
-    <Method Name="stateFinished" Id="{0e01e0bf-0d2f-48cf-a4a8-cac681f65a10}" FolderPath="API\">
-      <Declaration><![CDATA[METHOD stateFinished : BOOL
+    <Method Name="StateFinished" Id="{0e01e0bf-0d2f-48cf-a4a8-cac681f65a10}" FolderPath="API\">
+      <Declaration><![CDATA[METHOD StateFinished : BOOL
 VAR_INPUT
 END_VAR
 ]]></Declaration>
@@ -113,10 +113,10 @@ i_taskBase._state := 0;]]></ST>
 ]]></ST>
       </Implementation>
     </Method>
-    <Property Name="taskReady" Id="{700b7e26-f967-4e8d-8499-104188e09687}" FolderPath="API\">
+    <Property Name="TaskReady" Id="{700b7e26-f967-4e8d-8499-104188e09687}" FolderPath="API\">
       <Declaration><![CDATA[//Ready indicates that the task is ready to accept commands
 {attribute 'monitoring' := 'call'}
-PROPERTY taskReady : BOOL
+PROPERTY TaskReady : BOOL
 ]]></Declaration>
       <Get Name="Get" Id="{57e63903-3b80-4b15-831d-4bc339d57d54}">
         <Declaration><![CDATA[VAR
@@ -139,10 +139,10 @@ i_ComponentBase._ready := taskReady;]]></ST>
         </Implementation>
       </Set>
     </Property>
-    <Property Name="taskState" Id="{0037edbd-1327-4bd8-a4eb-83b875b0c5a7}" FolderPath="API\">
+    <Property Name="TaskState" Id="{0037edbd-1327-4bd8-a4eb-83b875b0c5a7}" FolderPath="API\">
       <Declaration><![CDATA[//Gets the current state of the system
 {attribute 'monitoring' := 'call'}
-PROPERTY taskState : ENUM
+PROPERTY TaskState : ENUM
 ]]></Declaration>
       <Get Name="Get" Id="{f23eefa5-93ff-4b9e-be63-112cd0e9b4fa}">
         <Declaration><![CDATA[VAR

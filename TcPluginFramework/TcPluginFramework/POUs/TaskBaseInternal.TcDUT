@@ -6,7 +6,7 @@
     STRUCT
         _state : UDINT;
         _newCommand : BOOL;
-        _activeCommand : IPLCOpenCommand;
+        _activeCommand : IPLCopenCommand;
     END_STRUCT
 END_TYPE
 ]]></Declaration>

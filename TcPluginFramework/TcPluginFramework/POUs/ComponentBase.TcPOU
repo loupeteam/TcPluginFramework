@@ -47,7 +47,7 @@ END_VAR
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
 i_ComponentBase._initDone := TRUE;
-LogMessage( 0, 'Init Complete');]]></ST>
+LogMessage(0, 'Init Complete');]]></ST>
       </Implementation>
     </Method>
     <Method Name="RegisterPlugin" Id="{571843c1-23e2-4fb3-8310-25661dcfe26f}" FolderPath="Internal\">
@@ -102,8 +102,8 @@ THIS^.Simulation();
 THIS^.Cyclic();]]></ST>
       </Implementation>
     </Method>
-    <Method Name="runPlugins" Id="{98b78174-293e-4815-ac54-043bcc5693a6}" FolderPath="Internal\">
-      <Declaration><![CDATA[METHOD PRIVATE runPlugins
+    <Method Name="RunPlugins" Id="{98b78174-293e-4815-ac54-043bcc5693a6}" FolderPath="Internal\">
+      <Declaration><![CDATA[METHOD PRIVATE RunPlugins
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
