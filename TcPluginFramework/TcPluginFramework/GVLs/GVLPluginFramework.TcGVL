@@ -3,7 +3,14 @@
   <GVL Name="GVLPluginFramework" Id="{1ad4663d-aae7-4491-bdf9-d7f4b936fa2d}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
+END_VAR
+VAR_GLOBAL CONSTANT
+	MAX_NUM_PLUGIN_RUNNERS: USINT := 20;
+	MAI_NUM_PLUGIN_RUNNERS: USINT := MAX_NUM_PLUGIN_RUNNERS - 1;
+END_VAR
+VAR_GLOBAL
     LogLevel : INT;
-END_VAR]]></Declaration>
+END_VAR
+]]></Declaration>
   </GVL>
 </TcPlcObject>

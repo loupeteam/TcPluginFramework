@@ -3,7 +3,7 @@
   <POU Name="PluginRunner" Id="{c027d292-b228-4269-9c8f-f866c2dbfbd5}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK PluginRunner IMPLEMENTS IPluginRunner
 VAR
-    _plugins : ARRAY[0..9] OF IPlugin;
+    _plugins : ARRAY[0..GVLPluginFramework.MAI_NUM_PLUGIN_RUNNERS] OF IPlugin;
 END_VAR]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
