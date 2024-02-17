@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="TESTPRG" Id="{a9c53689-54d0-0ab2-03ea-b352bcf63e11}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM TESTPRG
+VAR
+	// Currently there are no tests, except instantiating FUBs to make sure they build
+	base : ComponentBase;
+	runner : PluginRunner;
+	taskBaseExtended : TaskBase;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[TcUnit.RUN();]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

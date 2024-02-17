@@ -3,7 +3,7 @@
   <POU Name="ComponentBase" Id="{fd84c14d-786e-4719-a893-d07044f55331}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK ABSTRACT ComponentBase IMPLEMENTS IPluginRunner, IPlugin
 VAR
-    i_ComponentBase : ComponentBaseInternal;
+    _componentBase : ComponentBaseInternal;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -46,7 +46,7 @@ END_VAR
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-i_ComponentBase._initDone := TRUE;
+_componentBase._initDone := TRUE;
 LogMessage(0, 'Init Complete');]]></ST>
       </Implementation>
     </Method>
@@ -58,7 +58,7 @@ END_VAR]]></Declaration>
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-i_ComponentBase._plugins.RegisterPlugin(plugin);
+_componentBase._plugins.RegisterPlugin(plugin);
 ]]></ST>
       </Implementation>
     </Method>
@@ -71,7 +71,7 @@ END_VAR
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
 //If we aren't initialized, call init
-IF NOT i_ComponentBase._initDone THEN
+IF NOT _componentBase._initDone THEN
 
     //Init any derived classes
     THIS^.Init();
@@ -81,7 +81,7 @@ END_IF
 runPlugins();
 
 //Init() was successful, call cyclic
-IF i_ComponentBase._initDone THEN
+IF _componentBase._initDone THEN
 
     THIS^.Running();
 
@@ -108,7 +108,7 @@ THIS^.Cyclic();]]></ST>
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-i_ComponentBase._plugins.runPlugins();
+_componentBase._plugins.runPlugins();
 ]]></ST>
       </Implementation>
     </Method>
