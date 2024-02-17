@@ -125,7 +125,7 @@ END_VAR
         <Implementation>
           <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-taskReady := i_ComponentBase._ready;]]></ST>
+taskReady := _componentBase._ready;]]></ST>
         </Implementation>
       </Get>
       <Set Name="Set" Id="{b8cc81d5-fe59-44cc-bded-263742f9c532}">
@@ -135,7 +135,7 @@ END_VAR
         <Implementation>
           <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-i_ComponentBase._ready := taskReady;]]></ST>
+_componentBase._ready := taskReady;]]></ST>
         </Implementation>
       </Set>
     </Property>
