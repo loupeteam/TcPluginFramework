@@ -3,7 +3,7 @@
   <POU Name="TaskBase" Id="{11e525e0-645b-4df4-b2fb-22f19d8aff29}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK ABSTRACT TaskBase EXTENDS ComponentBase IMPLEMENTS ITaskState
 VAR
-    i_taskBase : TaskBaseInternal;
+    _taskBase : TaskBaseInternal;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -32,8 +32,8 @@ END_VAR
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-i_taskBase._newCommand := TRUE;
-i_taskBase._state := newTaskState;]]></ST>
+_taskBase._newCommand := TRUE;
+_taskBase._state := newTaskState;]]></ST>
       </Implementation>
     </Method>
     <Property Name="NewTaskCommand" Id="{abd17dbf-36ab-4acf-9302-1631ffdd8ae9}">
@@ -101,7 +101,7 @@ END_VAR
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-i_taskBase._state := 0;]]></ST>
+_taskBase._state := 0;]]></ST>
       </Implementation>
     </Method>
     <Method Name="StateMachine" Id="{8d58f681-a9ce-4bce-b521-193c540b10fe}" FolderPath="ApplicationOverrides\">
@@ -151,7 +151,7 @@ END_VAR
         <Implementation>
           <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.
 
-taskState := i_taskBase._state;]]></ST>
+taskState := _taskBase._state;]]></ST>
         </Implementation>
       </Get>
     </Property>
