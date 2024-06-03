@@ -19,7 +19,7 @@
     <Company>Loupe</Company>
     <Released>false</Released>
     <Title>TcPluginFramework</Title>
-    <ProjectVersion>0.0.4</ProjectVersion>
+    <ProjectVersion>1.0.0</ProjectVersion>
     <CombineIds>true</CombineIds>
     <LibraryCategories>
       <LibraryCategory xmlns="">

@@ -15,7 +15,7 @@ Run();]]></ST>
     <Folder Name="ApplicationOverrides" Id="{f2009942-3f7f-4941-bfa7-741ffc14e21c}" />
     <Folder Name="Internal" Id="{e1a9125c-f3ee-490f-ba83-a56d67f46885}" />
     <Method Name="Cyclic" Id="{f52824b0-33e3-4c0b-be35-3a5b4aa4be2f}" FolderPath="ApplicationOverrides\">
-      <Declaration><![CDATA[METHOD Cyclic
+      <Declaration><![CDATA[METHOD Cyclic : BOOL
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[// Copyright (c) 2024 Loupe (https://loupe.team), provided under the MIT License.

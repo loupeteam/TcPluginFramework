@@ -6,7 +6,7 @@
 INTERFACE ITaskState
 ]]></Declaration>
     <Method Name="Cyclic" Id="{df7848e1-6796-42e6-952c-938fef13bd38}">
-      <Declaration><![CDATA[METHOD Cyclic
+      <Declaration><![CDATA[METHOD Cyclic : BOOL
 ]]></Declaration>
     </Method>
     <Method Name="Inihibits" Id="{e83ce640-e6f2-45e5-949b-c526c3174821}">
